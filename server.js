@@ -25,9 +25,7 @@ mongoose.connect(DB_URI,{
 .catch(()=>console.log("mongoose Didnot Connect"))
 
 app.get('/',(req,res,next)=>{
-    res.status(200).json({
-        message : "Requiest ok"
-    })
+    res.end("Inside Honnaraju-portfolio-contact-API , build to accept request to store data")
 })
 
 app.use("/user",userRoutes)
