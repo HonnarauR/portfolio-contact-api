@@ -3,8 +3,9 @@ const app=express();
 const mongoose = require('mongoose');
 const cors=require('cors');
 
+const dotenv=require('dotenv');
+dotenv.config();
 const userRoutes = require("./api/routes/user");
-const {response} = require('express');
 
 //app level middleware
 app.use(cors());
@@ -25,13 +26,12 @@ mongoose.connect(DB_URI,{
 .catch(()=>console.log("mongoose Didnot Connect"))
 
 app.get('/',(req,res,next)=>{
-    res.end("Inside Honnaraju-portfolio-contact-API , build to accept request to store data")
+    res.end("Inside Honnaraju-portfolio-contact-API ");
 })
 
 app.use("/user",userRoutes)
 
-
-const PORT = process.env.PORT || 4005;
+const PORT = process.env.PORT;
 app.listen(PORT,()=>{
     console.log(`Server Started in port ${PORT}`);
 })
