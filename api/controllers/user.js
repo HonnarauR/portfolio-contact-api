@@ -3,7 +3,7 @@ const mongoose=require('mongoose');
 const Contact = require('../models/user');
 
 exports.contact =(req,res,next)=>{
-    console.log("--------------------------------Inside Signup------------------------------------");
+    console.log("--------------------------------Inside Contact------------------------------------");
 
         const contact =new Contact({
             _id : new mongoose.Types.ObjectId(),
